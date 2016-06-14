@@ -1,9 +1,9 @@
-require_relative '../lib/client'
+require 'platform161/client'
 
 describe "client" do
 
   let(:api_url) { "http://test.com" }
-  let(:credentials) { {user: 'test', password: 'password', client_id: 'client_id', client_secret: 'client_secret'}}
+  let(:credentials) { {user: 'test', password: 'password', client_id: 'client_id', client_secret: 'client_secret'} }
 
   it "needs correct credentials" do
     expect{Platform161::Client.new("test", {a: ''})}.to raise_error(ArgumentError)
