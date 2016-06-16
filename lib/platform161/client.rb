@@ -14,7 +14,7 @@ module Platform161
     end
 
     def request(method, resource, options = {})
-      uri = "#{@api_url}#{resource}"
+      uri = "#{@api_url}/#{resource}"
       @token = get_token if @token.nil?
       header = {"PFM161-API-AccessToken" => @token}
       response = HTTMultiParty.public_send(method, uri, body: options, headers: header)

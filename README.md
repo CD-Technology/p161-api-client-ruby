@@ -4,15 +4,19 @@ It is made for our API users so it can be used as an example of accessing P161 A
 
 ## Dependencies:
 
-ruby 2.1.1p76
-rspec (3.4.0)
-httmultiparty (0.3.16)
+To use the client add it to your Gemfile
+
+```
+gem 'p161-api-client', git: 'https://github.com/CD-Technology/p161-api-client-ruby.git'
+```
 
 ## Usage
 
 ### Initialization
 
 ```
+require 'platform161/client'
+
 API_URL = ENV['P161_API_URL']
 
 credentials = {
@@ -23,7 +27,7 @@ credentials = {
 }
 
 
-p161_api_client =  Platform161::Client.new(credentials, API_URL)
+p161_api_client =  Platform161::Client.new(API_URL, credentials)
 ```
 
 ### Get the campaigns list
